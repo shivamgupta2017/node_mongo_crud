@@ -1,10 +1,11 @@
 let mongoose = require('mongoose');
 const URL = 'mongodb://localhost:27017';
 const DB = 'schoolManagement';
-let dbConnection;
+
 
 mongoose.set('debug', true);
-function doConnection() {
+
+function Connection() {
   mongoose.connect(`${URL}/${DB}`)
   .then(() => {
     console.log('Database connection successful')
@@ -13,9 +14,6 @@ function doConnection() {
   .catch(err => {
     console.error('Database connection error', err)
   })
+}
 
-}
-doConnection();
-module.exports = () => {
-  return dbConnection;
-}
+module.exports = Connection

@@ -1,24 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
 const bodyParser= require('body-parser');
-var studentRouter = require('./routes/student');
-
-var app = express();
+const studentRouter = require('./routes/student');
+require('./db_connection')();
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
-var corsOptions = {
+const corsOptions = {
   origin: '*',
   // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }

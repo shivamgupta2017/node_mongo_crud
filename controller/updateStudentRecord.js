@@ -20,6 +20,13 @@ const updateMultipleAddress = async (addressToUpdate = []) => {
   });
 }
 
+/**
+ * This api is used to update records of student and address of student.
+ * @param {student, array<addresses>}  
+ * @param {*} res 
+ * @param {*} next 
+ * @returns {success} success ensures that the data has been updated successfully.
+ */
 const postStudentsRecord = (req, res, next) => {
   const studentInformation = {
     rollNumber: req.body.rollNumber,
@@ -52,8 +59,7 @@ const postStudentsRecord = (req, res, next) => {
     }).catch((e) => { throw new Error(e) });
 
   }).catch(err => {
-    console.error('err', err);
-
+    console.error('error :', err);
     return res.status(500).json({ success: false });
   });
 }

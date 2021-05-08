@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "2fb7a0b6-04d8-4d22-bb0d-fafe1e049d7e",
+		"name": "Node_mongo_crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"rollNumber\":1,\n\t\t\"studentFirstName\": \"shivam\",\n\t\t\"studentLastName\": \"gupta\",\n\t\t\"class\": 5,\n\t\t\"parentContactNumber\": 9993330227,\n\t\t\"address\": [{\n\t\t\t\"state\": \"MP\",\n\t\t\t\"district\": \"shajapur\",\n\t\t\t\"pin\": 465110,\n\t\t\t\"landmark\": \"abc\",\n\t\t\t\"houseName\": \"abc\",\n\t\t\t\"houseNumber\": \"123\"\n\t\t}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student"
+					]
+				},
+				"description": "post record"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student"
+					]
+				},
+				"description": "get students"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/student/609427cd1b292d3f8dc9b2be",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/student/609427cd1b292d3f8dc9b2be",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"609427cd1b292d3f8dc9b2be"
+					]
+				},
+				"description": "Delete record"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/student/6094286389cab33fd2dcd814",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/student/6094286389cab33fd2dcd814",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"6094286389cab33fd2dcd814"
+					]
+				},
+				"description": "Get Detailed Student Detail "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/student",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"6094286389cab33fd2dcd814\",\n    \"rollNumber\": 1,\n    \"studentFirstName\": \"Shivam\",\n    \"studentLastName\": \"gupta\",\n    \"class\": 5,\n    \"parentContactNumber\": 9993330227,\n    \"createdAt\": \"2021-05-06T17:33:23.422Z\",\n    \"updatedAt\": \"2021-05-06T17:33:23.422Z\",\n    \"__v\": 0,\n    \"address\": [\n        {\n            \"_id\": \"6094286389cab33fd2dcd815\",\n            \"state\": \"MP\",\n            \"district\": \"shajapur\",\n            \"pin\": 465110,\n            \"landmark\": \"abc\",\n            \"houseName\": \"abc\",\n            \"houseNumber\": 123345,\n            \"studentId\": \"6094286389cab33fd2dcd814\",\n            \"__v\": 0,\n            \"createdAt\": \"2021-05-06T17:33:23.438Z\",\n            \"updatedAt\": \"2021-05-06T17:33:23.438Z\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/student",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student"
+					]
+				},
+				"description": "Update student record"
+			},
+			"response": []
+		}
+	]
+}

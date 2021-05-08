@@ -1,6 +1,14 @@
 const StudentModel = require('../schemas/Student');
 const AddressModel = require('../schemas/Address');
 
+/**
+* This function is used to post student data in database along
+* with address of students in the form of array.
+ * @param {student, Array<address>} req Student object.
+ * @param {res} respons object.
+ * @param {next} next function handler.
+ * @return {success, status}
+ */
 const postStudentsRecord = (req, res, next) => {
   const studentInformation = {
     rollNumber: req.body.rollNumber,
@@ -18,15 +26,13 @@ const postStudentsRecord = (req, res, next) => {
         studentId: status._id
       }
     });
-    // const addresses = new AddressModel(studentAddresses);
-    AddressModel.insertMany(studentAddresses).then(status => {
-      return res.json({success:true, status})
+    AddressModel.insertMany(studentAddresses).then(AddressStatus => {
+      return res.json({ success: true, status: status })
     }).catch((err) => {
       throw new Error(err);
     })
   }).catch((err) => {
-    console.error('error ',err);
-    return res.status(500).json({success:false});
+    return res.status(500).json({ success: false });
   });
 
 
